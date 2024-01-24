@@ -1,0 +1,64 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+%matplotlib inline
+df = pd.read_csv('C:\Family Business 3\Family Business 3.csv')
+
+df.head()
+df.info()
+df.tail()
+
+data=pd.DataFrame(df)
+data
+fig = plt.figure()
+
+fig = plt.figure()
+ax = fig.add_axes([0,0,1.5,1.5])
+x=list(data.iloc[:,0])
+y=list(data.iloc[:,7])
+ax.bar(x,y,color= 'b')
+plt.title('Family Business Names And Employees Name')
+plt.xlabel('Family Business Names')
+plt.ylabel('Name of the Employees')
+plt.show()
+
+x=df['Family Business']
+y=df['Employes Salary per Month/day']
+
+plt.xlabel('Family Business', fontsize=11)
+plt.ylabel('Employes Salary per Month/day', fontsize=11)
+plt.bar(x,y)
+
+fig = plt.figure()
+
+x=pd.array([35,25,25,15,15])
+mylabels= ["Fruit","Vegetabels","grocery","Movie Theaters","Flower shop"]
+myexplode= [0.2,0,0,0,0]
+
+plt.pie(x, labels =mylabels, explode=myexplode, shadow=True)
+plt.legend(title="four business:")
+plt.show()
+
+x=list(data.iloc[:,0])
+y=list(data.iloc[:,7])
+plt.xlabel('Family Business', fontsize=16)
+plt.ylabel('Employes Salary per Month/day', fontsize=18)
+plt.scatter(x, y)
+#plt.plot(x, y)
+plt.show()
+
+x=list(data.iloc[:,0])
+y=list(data.iloc[:,7])
+plt.xlabel('Family Business', fontsize=18)
+plt.ylabel('Employes Salary per Month/day', fontsize=16)
+plt.scatter(x, y)
+plt.plot(x, y)
+plt.show()
+
+x=list(data.iloc[:,0])
+y=list(data.iloc[:,7])
+plt.xlabel('Family Business', fontsize=18)
+plt.ylabel('Employes Salary per Month/day', fontsize=16)
+plt.plot(x, y)
+plt.show()
+
+
